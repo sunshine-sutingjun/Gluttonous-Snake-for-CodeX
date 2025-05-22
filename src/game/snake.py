@@ -18,8 +18,9 @@ class Snake:
         self.board = board
         center_x = board.width // 2
         center_y = board.height // 2
+        # place the head at the center with the body extending downward
         self.body: Deque[Tuple[int, int]] = deque(
-            [(center_x, center_y + i) for i in reversed(range(init_length))]
+            (center_x, center_y + i) for i in range(init_length)
         )
         self.direction = "Up"
         self._grow_pending = 0
